@@ -1,0 +1,14 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.message {
+    width: 100%;
+    display: flex;
+    padding-top: 8px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background-color: gray;
+}

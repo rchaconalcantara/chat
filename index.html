@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="icon" href="img/logo.jpeg" sizes="512x512">
+    <title>Tell Me</title>
+    <link rel="shortcut icon" rel="image/png" href="img/logo.jpeg">
+    <link rel="apple-touch-icon" rel="image/png" href="img/logo.jpeg">
+    <link rel="apple-touch-status-image" rel="image/png" href="img/logo.jpeg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="js/push.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+
+    <div class="main animated faceIn ">
+
+        <center>
+            <h1 class="text-primary">Publicaciones</h1>
+
+            <div class="container">
+                <div class="post" class="mt-3 mb-5"></div>
+            </div>
+
+            <div id="start" class="animated ">
+                <img src="img/loading.gif" alt="Welcome" width="100px" class="animated fadeIn">
+            </div>
+
+            <form class=" message">
+                <div class="form-group col-9 mb-2">
+                    <input type="text" class="form-control" id="message" placeholder="Message">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Send!</button>
+            </form>
+
+        </center>
+
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD3xpBOFy0qqDqVIF9Qd_AaENc_s8G8p6E",
+            authDomain: "tell-me-bd7c8.firebaseapp.com",
+            databaseURL: "https://tell-me-bd7c8.firebaseio.com",
+            projectId: "tell-me-bd7c8",
+            storageBucket: "tell-me-bd7c8.appspot.com",
+            messagingSenderId: "447500959854",
+            appId: "1:447500959854:web:4dfee152c74c22645d667f",
+            measurementId: "G-CJ7X18PNKV"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db = firebase.firestore();
+    </script>
+
+    <script src="js/jquery.min.js "></script>
+    <script src="js/ui.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/main.js "></script>
+</body>
+
+</html>
