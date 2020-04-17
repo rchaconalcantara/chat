@@ -23,7 +23,6 @@
 }
 
 .about-me {
-    z-index: 1;
     top: 0;
     width: 100vw;
     height: 100vh;
@@ -43,4 +42,5 @@
 
 #show:checked~.about-me {
     opacity: 1;
+    z-index: 1;
 }
