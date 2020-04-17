@@ -1,7 +1,7 @@
 {
-    "name": "Tell Me",
-    "short_name": "TM",
-    "description": "Aplicacion para hablar",
+    "name": "Post T",
+    "short_name": "PT",
+    "description": "Aplicacion para postear",
     "background_color": "#3498DB",
     "theme_color": "#3498DB",
     "orientation": "portrait",
@@ -11,7 +11,7 @@
     "lang": "es-MX",
     "icons": [{
         "src": "img/logo.jpeg",
-        "sizes": "683x683",
+        "sizes": "225x225",
         "type": "image/jpeg"
     }]
 }
