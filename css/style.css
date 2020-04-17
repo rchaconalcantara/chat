@@ -13,3 +13,7 @@
     left: 0px;
     background-color: gray;
 }
+
+#audio {
+    display: none;
+}

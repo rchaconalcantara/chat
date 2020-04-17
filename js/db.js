@@ -5,15 +5,11 @@ db.enablePersistence().catch(err => {
     console.log(err);
 })
 
-db.collection('chat').orderBy('message').get().then((snapshot) => {
-
+db.collection('chat').onSnapshot((snapshot) => {
     snapshot.docChanges().forEach(change => {
         // console.log(change, change.doc.data());
         if (change.type === 'added') {
-            renderRecipe(change.doc.data(), change.doc.id)
-
-            play.play();
-
+            renderPost(change.doc.data(), change.doc.id)
             Push.create("New message", {
                 body: "You have a new message",
                 icon: 'img/logo.jpeg',
@@ -23,12 +19,26 @@ db.collection('chat').orderBy('message').get().then((snapshot) => {
                     this.close();
                 }
             });
-
+            play.play();
+        }
+        if (change.type === 'removed') {
+            removedPost(change.doc.id)
+            Push.create("delete message", {
+                body: "You have a new message",
+                icon: 'img/logo.jpeg',
+                timeout: 2000,
+                onClick: function() {
+                    window.focus();
+                    this.close();
+                }
+            });
+            play.play();
         }
     });
-
 })
 
+
+//adding
 const form = document.querySelector('form');
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -40,5 +50,17 @@ form.addEventListener('submit', e => {
     db.collection('chat').add(data).catch(err => {
         console.log(err)
     })
+
+})
+
+//deleting
+const deletePst = document.querySelector('.post');
+deletePst.addEventListener('click', e => {
+    console.log(e.target.tagName, e.target.getAttribute('data-id'));
+
+    if (e.target.tagName === 'BUTTON') {
+        const idButon = e.target.getAttribute('data-id');
+        db.collection('chat').doc(idButon).delete();
+    }
 
 })
