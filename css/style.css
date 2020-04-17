@@ -17,3 +17,30 @@
 #audio {
     display: none;
 }
+
+#show {
+    display: none;
+}
+
+.about-me {
+    z-index: 1;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: tan;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.about {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+
+#show:checked~.about-me {
+    opacity: 1;
+}
