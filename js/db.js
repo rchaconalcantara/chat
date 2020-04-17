@@ -1,12 +1,18 @@
+let play = document.getElementById('audio');
+// let play = $('#audio')[0];
+
 db.enablePersistence().catch(err => {
     console.log(err);
 })
 
-db.collection('chat').onSnapshot((snapshot) => {
+db.collection('chat').orderBy('message').get().then((snapshot) => {
+
     snapshot.docChanges().forEach(change => {
         // console.log(change, change.doc.data());
         if (change.type === 'added') {
             renderRecipe(change.doc.data(), change.doc.id)
+
+            play.play();
 
             Push.create("New message", {
                 body: "You have a new message",
@@ -20,6 +26,7 @@ db.collection('chat').onSnapshot((snapshot) => {
 
         }
     });
+
 })
 
 const form = document.querySelector('form');

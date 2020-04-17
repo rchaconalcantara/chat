@@ -1,4 +1,4 @@
-let menu = $('#menu');
+// let menu = $('#menu');
 let start = document.getElementById('start');
 let stop = $('#stop');
 let play = $('#audio')[0];
