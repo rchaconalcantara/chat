@@ -51,6 +51,8 @@ form.addEventListener('submit', e => {
         console.log(err)
     })
 
+    form.message.value = '';
+
 })
 
 //deleting
